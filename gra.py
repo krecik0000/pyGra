@@ -2,6 +2,25 @@ import random
 import os 
 import time
 
+class Easy:
+    distance = random.randrange(9,20) #Distance difference "11"
+    maxDist = distance
+    minDist = 8
+    shotChance = 10
+
+class Normal:
+    distance = random.randrange(9,17) #Distance difference "8"
+    maxDist = distance
+    minDist = 8
+    shotChance = 15
+
+class Hard:
+    distance = random.randrange(9,15) #Distance difference "6"
+    maxDist = distance
+    minDist = 8
+    shotChance = 20
+
+
 choiceMenu = 0
 def valueException():
     print("Ops! try use other keys")
@@ -10,7 +29,7 @@ def valueException():
 
 def newGame(choiceMenu):
     while choiceMenu != 4:  #Menu loop which will be executed until you click "4" button
-        print("Select difficulty level:")
+        print("Select Difficulty Level:")
         print("|1|Easy")
         print("|2|Normal")
         print("|3|Hard")
@@ -19,7 +38,7 @@ def newGame(choiceMenu):
             choiceMenu = int(input(":"))
             os.system("cls")
             if choiceMenu == 1:
-                print("1")
+                print("1")               
             elif choiceMenu == 2:
                 print("2")
             elif choiceMenu == 3:
@@ -32,6 +51,7 @@ def newGame(choiceMenu):
 
 def play(choiceMenu):
     while choiceMenu != 3:  #Menu loop which will be executed until you click "3" button
+        print("Select Option:")
         print("|1|New Game")
         print("|2|Load Game")
         print("|3|Back")
