@@ -4,20 +4,20 @@ import time
 
 choiceMenu = 0
 def valueException():
-    os.system("cls")
-    print("Ops! try use number keys")
+    print("Ops! try use other keys")
     time.sleep(1)
     os.system("cls")
 
 def newGame(choiceMenu):
-    while choiceMenu != 4:
+    while choiceMenu != 4:  #Menu loop which will be executed until you click "4" button
         print("Select difficulty level:")
         print("|1|Easy")
         print("|2|Normal")
         print("|3|Hard")
         print("|4|Back")
-        try:
+        try: #Try input number
             choiceMenu = int(input(":"))
+            os.system("cls")
             if choiceMenu == 1:
                 print("1")
             elif choiceMenu == 2:
@@ -25,10 +25,9 @@ def newGame(choiceMenu):
             elif choiceMenu == 3:
                 print("3")
             elif choiceMenu != isinstance(choiceMenu,str) and choiceMenu != 3 and choiceMenu != 1 and choiceMenu != 2 and choiceMenu != 4:
-                print("Ops! try use correct numbers")
-                time.sleep(1)
-                os.system("cls")
-        except ValueError:
+                valueException()
+        except ValueError: #When input value is not a number print this exception
+            os.system("cls")
             valueException()
 
 def play(choiceMenu):
@@ -44,10 +43,9 @@ def play(choiceMenu):
             elif choiceMenu == 2:
                 print("2")
             elif choiceMenu != isinstance(choiceMenu,str) and choiceMenu != 3 and choiceMenu != 1 and choiceMenu != 2:
-                print("Ops! try use correct numbers")
-                time.sleep(1)
-                os.system("cls")
+                valueException()
         except ValueError: #When input value is not a number print this exception
+            os.system("cls")
             valueException()
             
 def menu(choiceMenu):
@@ -65,10 +63,9 @@ def menu(choiceMenu):
                 #settings()
                 print("2")
             elif choiceMenu != isinstance(choiceMenu,str) and choiceMenu != 3 and choiceMenu != 1 and choiceMenu != 2:
-                print("Ops! try use correct numbers")
-                time.sleep(1)
-                os.system("cls")
+                valueException()
         except ValueError:     #When input value is not a number print this exception
+            os.system("cls")
             valueException()
 
 os.system("cls")
